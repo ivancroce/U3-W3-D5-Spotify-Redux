@@ -20,7 +20,6 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
     dispatch(setCurrentSong(song));
   };
 
-  // to fix col and style
   return (
     <Container fluid>
       <Row className="mb-4">

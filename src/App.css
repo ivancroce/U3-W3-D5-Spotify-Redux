@@ -170,3 +170,18 @@ ul {
 .mainPage img {
   width: 200px;
 }
+
+/* player-container class for responsiveness */
+.player-container {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 937px) {
+  .player-container {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+  }
+}

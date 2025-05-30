@@ -13,7 +13,7 @@ function App() {
           <Sidebar />
         </Col>
 
-        <Col xs={12} md={9} className="offset-md-3 mainPage">
+        <Col xs={12} md={9} className="offset-md-3 mainPage px-0">
           <MainSection />
           <MusicSection title="Rock Classics" artist="queen" sectionNumber="section1" />
           <MusicSection title="Pop Culture" artist="katyperry" sectionNumber="section2" />
