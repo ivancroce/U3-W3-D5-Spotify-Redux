@@ -22,23 +22,27 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
 
   // to fix col and style
   return (
-    <Container>
-      <Row className="py-3">
-        <h2 className="text-white">{title}</h2>
-        {songs &&
-          songs[sectionNumber].map((song) => (
-            <Col key={song.id} xs={12} sm={6} lg={3} className="d-flex flex-column text-center">
-              <Image src={song.album.cover_medium} fluid alt="track" className="mb-2" onClick={() => handleSongClick(song)} />
-              <Button className="bg-transparent border border-0" onClick={() => handleLikeClick(song.id)}>
-                {!song.like ? <Heart className="text-white" /> : <HeartFill className="text-white" />}
-              </Button>
-              <p className="text-white">
-                Track: {song.title}
-                <br />
-                Artist: {song.artist.name}
-              </p>
-            </Col>
-          ))}
+    <Container fluid>
+      <Row className="mb-4">
+        <Col xs={10}>
+          <h2 className="text-white">{title}</h2>
+          <Row className="imgLinks py-3" xs={1} sm={2} lg={3} xl={4}>
+            {songs &&
+              songs[sectionNumber] &&
+              songs[sectionNumber].map((song) => (
+                <Col key={song.id} className="mb-4 text-center">
+                  <Image src={song.album.cover_medium} fluid alt="track" className="mb-2" onClick={() => handleSongClick(song)} style={{ cursor: "pointer" }} />
+                  <div className="text-center">
+                    <p className="text-white small p-0 m-0">Track: {song.title}</p>
+                    <p className="text-white small p-0 m-0">Artist: {song.artist.name}</p>
+                    <Button variant="link" className="p-0 m-0" onClick={() => handleLikeClick(song.id)}>
+                      {song.like ? <HeartFill className="text-danger" /> : <Heart className="text-white" />}
+                    </Button>
+                  </div>
+                </Col>
+              ))}
+          </Row>
+        </Col>
       </Row>
     </Container>
   );
