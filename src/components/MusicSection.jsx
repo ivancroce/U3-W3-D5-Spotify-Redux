@@ -20,6 +20,7 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
     dispatch(setCurrentSong(song));
   };
 
+  // to fix col and style
   return (
     <Container>
       <Row className="py-3">
