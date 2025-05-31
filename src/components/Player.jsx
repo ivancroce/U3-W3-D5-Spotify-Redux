@@ -1,9 +1,9 @@
 import { Container, Row, Col, Image, ProgressBar, Button } from "react-bootstrap";
-import next from "../../public/assets/playerbuttons/next.png";
-import play from "../../public/assets/playerbuttons/play.png";
-import prev from "../../public/assets/playerbuttons/prev.png";
-import repeat from "../../public/assets/playerbuttons/repeat.png";
-import shuffle from "../../public/assets/playerbuttons/shuffle.png";
+import next from "../assets/playerbuttons/next.png";
+import play from "../assets/playerbuttons/play.png";
+import prev from "../assets/playerbuttons/prev.png";
+import repeat from "../assets/playerbuttons/repeat.png";
+import shuffle from "../assets/playerbuttons/shuffle.png";
 import { useDispatch, useSelector } from "react-redux";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 import { setLike } from "../redux/actions/musicAction";

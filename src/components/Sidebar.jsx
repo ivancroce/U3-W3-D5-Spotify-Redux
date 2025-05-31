@@ -1,5 +1,5 @@
 import { Button, Container, Form, Image, InputGroup, Nav, Navbar } from "react-bootstrap";
-import logo from "../../public/assets/logo/logo.png";
+import logo from "../assets/logo/logo.png";
 import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 import { fetchSearchResults } from "../redux/actions/musicAction";
