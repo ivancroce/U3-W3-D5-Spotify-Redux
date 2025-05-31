@@ -18,7 +18,7 @@ body {
 }
 
 .navbar.fixed-left .navbar-collapse .navbar-nav a {
-  color: rgb(145, 145, 145) !important;
+  color: rgb(145, 145, 145);
   transition: 0.3s;
 }
 
@@ -50,6 +50,7 @@ ul {
 .nav-link i {
   font-size: 1.5em;
 }
+
 .nav-link-hover .nav-link:hover {
   color: white !important;
 }
