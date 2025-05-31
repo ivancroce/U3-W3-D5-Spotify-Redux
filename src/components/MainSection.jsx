@@ -6,7 +6,7 @@ const MainSection = () => {
     <Container fluid>
       <Row className="px-2">
         <Col xs={9} lg={11} className="mainLinks d-none d-md-flex mt-3 mb-5">
-          <Nav className="w-100 justify-content-evenly">
+          <Nav className="w-100 justify-content-evenly nav-link-hover">
             <Nav.Link href="#">TRENDING</Nav.Link>
             <Nav.Link href="#">PODCAST</Nav.Link>
             <Nav.Link href="#">MOODS AND GENRES</Nav.Link>

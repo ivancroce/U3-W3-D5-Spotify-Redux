@@ -4,7 +4,7 @@ import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { fetchMusic, setCurrentSong, setLike } from "../redux/actions/musicAction";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 
-const MusicSection = ({ title, artist, sectionNumber }) => {
+const MusicSection = ({ title, artist, sectionNumber, sectionId }) => {
   const dispatch = useDispatch();
   const songs = useSelector((state) => state.music.results);
 
@@ -17,7 +17,7 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
   }, [artist, dispatch, sectionNumber]);
 
   const handleSongClick = (song) => {
-    dispatch(setCurrentSong(song));
+    dispatch(setCurrentSong(song, sectionNumber));
   };
 
   return (
@@ -25,7 +25,7 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
       <Row className="mb-4">
         <Col xs={10}>
           <h2 className="text-white">{title}</h2>
-          <Row className="imgLinks py-3" xs={1} sm={2} lg={3} xl={4}>
+          <Row className="imgLinks py-3" xs={1} sm={2} lg={3} xl={4} id={sectionId || undefined}>
             {songs &&
               songs[sectionNumber] &&
               songs[sectionNumber].map((song) => (
@@ -35,7 +35,7 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
                     <p className="text-white small p-0 m-0">Track: {song.title}</p>
                     <p className="text-white small p-0 m-0">Artist: {song.artist.name}</p>
                     <Button variant="link" className="p-0 m-0" onClick={() => handleLikeClick(song.id)}>
-                      {song.like ? <HeartFill className="text-danger" /> : <Heart className="text-white" />}
+                      {song.like ? <HeartFill style={{ color: "#1DB954" }} /> : <Heart className="text-white" />}
                     </Button>
                   </div>
                 </Col>

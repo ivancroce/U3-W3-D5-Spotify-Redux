@@ -17,7 +17,7 @@ function App() {
           <MainSection />
           <MusicSection title="Rock Classics" artist="queen" sectionNumber="section1" />
           <MusicSection title="Pop Culture" artist="katyperry" sectionNumber="section2" />
-          <MusicSection title="#HipHop" artist="eminem" sectionNumber="section3" />
+          <MusicSection title="#HipHop" artist="eminem" sectionNumber="section3" sectionId="hipHopSection" />
         </Col>
 
         {/* Player */}

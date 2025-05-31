@@ -22,9 +22,11 @@ const musicReducer = (state = initialState, action) => {
         }
       };
     case SET_CURRENT_SONG:
+      // console.log("Reducer SET_CURRENT_SONG, payload:", action.payload);
       return {
         ...state,
-        currentSong: action.payload
+        currentSong: action.payload.song,
+        currentSection: action.payload.sectionNumber
       };
     case SET_LIKE:
       return {

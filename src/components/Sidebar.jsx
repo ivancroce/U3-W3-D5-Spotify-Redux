@@ -40,7 +40,7 @@ const Sidebar = () => {
         <Button className="login-btn" type="button">
           Login
         </Button>
-        <div className="d-flex justify-content-center gap-1">
+        <div className="d-flex justify-content-center gap-1 nav-link-hover">
           <Nav.Link href="#">Cookie Policy</Nav.Link>|<Nav.Link href="#"> Privacy</Nav.Link>
         </div>
       </div>

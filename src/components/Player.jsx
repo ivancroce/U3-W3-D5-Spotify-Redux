@@ -4,10 +4,29 @@ import play from "../../public/assets/playerbuttons/play.png";
 import prev from "../../public/assets/playerbuttons/prev.png";
 import repeat from "../../public/assets/playerbuttons/repeat.png";
 import shuffle from "../../public/assets/playerbuttons/shuffle.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Heart, HeartFill } from "react-bootstrap-icons";
+import { setLike } from "../redux/actions/musicAction";
 
 const Player = () => {
-  const currentSong = useSelector((state) => state.music.currentSong);
+  const { currentSong, currentSection, results } = useSelector((state) => state.music);
+  // console.log("Player currentSong:", currentSong);
+  // console.log("Player currentSection:", currentSection);
+  // console.log("Player results:", results);
+
+  const dispatch = useDispatch();
+
+  // to find the currentSong in the active currentSection
+  // because only in currentSection we have the updated "like" value from Redux
+  const songWithLike = currentSong && results[currentSection]?.find((s) => s.id === currentSong.id);
+
+  // when clicking on the Heart icon, dispatch an action to Redux to toggle the "like" status
+  // only dispatch if both currentSong and currentSection are defined
+  const handleLikeClick = () => {
+    if (currentSong && currentSection) {
+      dispatch(setLike(currentSection, currentSong.id));
+    }
+  };
 
   return (
     <Container fluid className="fixed-bottom bg-container player-container">
@@ -18,7 +37,10 @@ const Player = () => {
               <Image src={currentSong.album.cover_medium} fluid alt="album cover" style={{ width: "60px", height: "60px", marginRight: "10px" }} rounded />
               <div className="text-light">
                 <p className="mb-0 small fw-bold">{currentSong.title}</p>
-                <p className="mb-0 small">{currentSong.artist.name}</p>
+                <span className="mb-0 me-2 small">{currentSong.artist.name}</span>
+                <Button onClick={handleLikeClick} variant="link" className="text-white p-0 ms-3">
+                  {songWithLike?.like ? <HeartFill style={{ color: "#1DB954" }} /> : <Heart className="text-white" />}
+                </Button>
               </div>
             </div>
           )}

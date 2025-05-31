@@ -50,6 +50,9 @@ ul {
 .nav-link i {
   font-size: 1.5em;
 }
+.nav-link-hover .nav-link:hover {
+  color: white !important;
+}
 
 .signup-btn {
   background-color: white;
@@ -62,8 +65,8 @@ ul {
 
 .signup-btn:hover {
   color: white;
-  background-color: rgb(60, 211, 60);
-  border: 1px solid rgb(60, 211, 60);
+  background-color: rgb(60, 211, 60) !important;
+  border: 1px solid rgb(60, 211, 60) !important;
 }
 
 .login-btn {
@@ -76,8 +79,9 @@ ul {
 }
 
 .login-btn:hover {
-  color: black;
-  background-color: white;
+  color: black !important;
+  background-color: white !important;
+  border: 1px solid white !important;
 }
 
 @media screen and (max-width: 936px) {
